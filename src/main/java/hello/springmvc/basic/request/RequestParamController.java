@@ -74,6 +74,14 @@ public class RequestParamController {
         log.info("username = {}",helloData.getUsername());
         log.info("age = {}",helloData.getAge());
 
+        return "OK";
+    }
+
+    @RequestMapping("model-attribute-v2")
+    public String modelAttribute2(HelloData helloData) {
+
+        log.info("username = {}",helloData.getUsername());
+        log.info("age = {}",helloData.getAge());
 
         return "OK";
     }
