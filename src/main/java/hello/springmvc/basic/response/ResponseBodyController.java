@@ -8,6 +8,16 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ResponseBodyController {
 
+    @GetMapping("/response-body-string-v2")
+    public ResponseEntity<String> responseBodyV2() {
+        return new ResponseEntity<>("ok", HttpStatus.OK);
+    }
+
+    @ResponseBody
+    @GetMapping("/response-body-string-v3")
+    public String responseBodyV3() {
+        return "ok";
+    }
     @GetMapping("response-body-string-v4")
     public ResponseEntity<HelloData> responseBodyControllerV4(@RequestBody HelloData helloData) {
         HelloData data = new HelloData();
